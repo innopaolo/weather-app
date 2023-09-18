@@ -13,3 +13,16 @@ export function fillElements(text1, text2, text3, text4, text5, text6) {
     windMPH.innerHTML = `WIND: <span style="color:antiquewhite;">${text5} m/h</span>`;
     humidity.innerHTML = `HUMIDITY: <span style="color:antiquewhite;">${text6}%</span>`;
 }
+
+// Use user input for api get
+const input = document.getElementById('city');
+export let userInput;
+
+input.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+        userInput = input.value;
+    }
+});
+
+
+
