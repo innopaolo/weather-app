@@ -4,8 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather app</title>
+
 </head>
 <body>
+    <form class="search-group field">
+        <input type="input" class="search-field" placeholder='city' id='city' autocomplete="off" />
+        <label for="city" class="search-label">City</label>
+    </form>
 
+    <main>
+        <div class="info">
+            <p class="condition"></p>
+            <h1 class="location"></h1>
+            <section class="weather-details">
+                <div class="degrees"></div>
+                <div class="extra-info">
+                    <p class="feels-like"></p>
+                    <p class="wind-mph"></p>
+                    <p class="humidity"></p>
+                </div>
+            </section>
+        </div>
+    </main>
 </body>
 </html>

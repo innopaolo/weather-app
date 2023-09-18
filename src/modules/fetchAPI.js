@@ -1,8 +1,8 @@
 export function getWeather(url) {
-    fetch(url)
+    return fetch(url)
         .then(response => response.json())
         .then(data => {
-            console.log(data);
+            return data;
         })
         .catch(error => {
             console.error('Error fetching weather data: ', error);
@@ -11,11 +11,11 @@ export function getWeather(url) {
 
 export function getUserLocation() {
     return fetch('http://www.geoplugin.net/json.gp')
-    .then(response => response.json())
-    .then(data => {
-      return data.geoplugin_city;
-    })
-    .catch(error => {
-        console.error('Error fetching location: ', error);
-    });
+        .then(response => response.json())
+        .then(data => {
+        return data.geoplugin_city;
+        })
+        .catch(error => {
+            console.error('Error fetching location: ', error);
+        });
 }

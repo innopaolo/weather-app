@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@200;500;800&display=swap');
+
+
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -5,6 +9,131 @@
 }
 
 body {
-    background-color: antiquewhite;
-    color: red;
+    background-image: url('./assets/weatherBG.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    font-family: 'Mukta', sans-serif;
+    display: flex;
+    flex-direction: column;
 }
+
+
+/* Search bar */
+.search-group {
+    position: relative;
+    padding: 15px 0 0;
+    margin: 1.6rem 2rem;
+    width: 20ch;
+}
+
+@media (max-width: 500px) {
+    .search-group {
+        width: 50%;
+    }
+}
+
+
+.search-field {
+    font-family: inherit;
+    width: 100%;
+    border: 0;
+    border-bottom: 2px solid #9b9b9b;
+    outline: 0;
+    font-size: 1.3rem;
+    color: #fff;
+    padding: 7px 0 0;
+    background: transparent;
+    transition: border-color 0.2s;
+}
+
+.search-field::placeholder {
+    color: transparent;
+}
+
+.search-field:placeholder-shown ~ .search-label {
+    font-size: 1.3rem;
+    font-weight: 800;
+    cursor: text;
+    top: 26px;
+  }
+  
+.search-label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: #9b9b9b;
+}
+  
+.search-field:focus ~ .search-label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: #31abdf;
+    font-weight: 700;
+}
+
+.search-field:focus {
+    padding-bottom: 1px;
+    font-weight: 700;
+    border-width: 3px;
+    border-image: linear-gradient(to right, #0c557f, #31abdf);
+    border-image-slice: 1;
+}
+
+/* Weather info box */
+main {
+    align-self: flex-end;
+}
+
+.info {
+    background: linear-gradient(to right, #1787c7, #53c8fa);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 1.6rem 3rem;
+    font-size: 3vw;
+
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.condition {
+  line-height: 1.5em;
+  font-size: 1.4em;
+  font-weight: 200;
+  color: antiquewhite;
+}
+
+.location {
+    line-height: 2rem;
+}
+
+.weather-details {
+    display: flex;
+}
+
+.degrees {
+    font-size: 6em;
+    font-weight: 800;
+    color: antiquewhite;
+}
+
+.extra-info {
+    align-self: center;
+    margin: 0 0 0 auto;
+    border-left: 3px solid #9b9b9b;
+    padding-left: 2em;
+}
+/* 
+
+.feels-like,
+.wind-mph,
+.humidity {
+
+} */
