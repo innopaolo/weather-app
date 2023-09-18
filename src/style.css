@@ -90,14 +90,15 @@ main {
     align-self: flex-end;
 }
 
+
 .info {
-    background: linear-gradient(to right, #1787c7, #53c8fa);
+    background: linear-gradient(to right, #078fde, #53c8fa);
     display: flex;
     flex-direction: column;
     gap: 8px;
     margin: 1.6rem 3rem;
     font-size: 3vw;
-
+    /* Linear gradient background will show through transparent text */
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
@@ -123,17 +124,60 @@ main {
     font-weight: 800;
     color: antiquewhite;
 }
+.degrees::after,
+.feels-like::after {
+    content: '℃';
+    font-size: 0.3em;
+    vertical-align: super;
+    margin-top: 1em;
+    color: antiquewhite;
+}
 
 .extra-info {
     align-self: center;
     margin: 0 0 0 auto;
     border-left: 3px solid #9b9b9b;
-    padding-left: 2em;
+    padding-left: 1.2em;
 }
-/* 
 
-.feels-like,
-.wind-mph,
-.humidity {
+.feels-like::after {
+    font-size: 0.5em;
+}
 
-} */
+@media (max-width: 900px) {
+    main {
+       width: 100%;
+   }
+
+   .info {
+    font-size: 4.5vw;
+   }
+
+   .extra-info {
+        margin-left: 1rem;
+   }
+}
+
+@media (max-width: 490px) {
+    .info {
+        gap: 2px;
+        font-size: 6vw;
+    }
+
+    .location {
+        line-height: 2.8rem;
+    }
+
+    .degrees {
+        font-size: 8em;
+        line-height: 0.8em;
+    }
+
+    .weather-details {
+        flex-direction: column;
+    }
+
+    .extra-info {
+        margin-top: 2rem;
+    }
+}
