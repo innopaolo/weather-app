@@ -1,7 +1,10 @@
-import './style.css';
-import weather from './assets/weather.jpeg';
+import './style.css'
 
-const img = document.createElement('img');
-img.src = weather;
+import getWeather from './modules/getWeather.js';
 
-document.body.appendChild(img);
+
+const apiKey = 'ce8d565b4f7746cb970133312231609';
+const apiUrl = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=london`;
+
+
+getWeather(apiUrl);
