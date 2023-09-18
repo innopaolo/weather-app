@@ -6,10 +6,6 @@ export function getWeather(url) {
         })
         .catch(error => {
             console.error('Error fetching weather data: ', error);
-
-            // Add at the bottom of the search bar error message
-            const div = document.querySelector(".error-message");
-            div.textContent = error;
         });
 }
 
