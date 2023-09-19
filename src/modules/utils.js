@@ -29,7 +29,7 @@ export async function fetchAndFillWeatherInfo(url, getWeather, fillElements, err
             data.current.humidity
         );
     } catch (error) {
-        errorDisplay(error.message);
+        errorDisplay();
     }
 }
 
