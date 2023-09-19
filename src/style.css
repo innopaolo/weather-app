@@ -9,6 +9,7 @@
 }
 
 body {
+    position: relative;
     background-image: url('./assets/weatherBG.jpg');
     background-size: cover;
     background-repeat: no-repeat;
@@ -298,5 +299,10 @@ input:checked + .slider:before {
 
 footer {
    position: absolute;
-   bottom: 0; 
+   bottom:  0;
+   left: 40%;
+   color: white; 
+}
+footer a {
+    color: white;
 }
