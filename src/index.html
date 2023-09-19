@@ -4,24 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather app</title>
-    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <form class="search-group field">
+    <div class="search-group field">
         <input type="input" class="search-field" placeholder='city' id='city' autocomplete="off" />
         <label for="city" class="search-label">City</label>
-    </form>
+        <div class="error-message"></div>
+    </div>
 
     <main>
+        <!-- Rounded switch -->
+        <label class="switch">
+            <input id="convert" type="checkbox">
+            <span class="slider round"></span>
+        </label>
+
         <div class="info">
-            <p class="condition">Partly cloudy</p>
-            <h1 class="location">Manila, Philippines</h1>
+            <p class="condition"></p>
+            <h1 class="location"></h1>
             <section class="weather-details">
-                <div class="degrees">31</div>
+                <div class="degrees"></div>
                 <div class="extra-info">
-                    <p class="feels-like">FEELS LIKE: 39.8</p>
-                    <p class="wind-mph">WIND: 4.3 m/h</p>
-                    <p class="humidity">HUMIDITY: 75%</p>
+                    <p class="feels-like"></p>
+                    <p class="wind-mph"></p>
+                    <p class="humidity"></p>
                 </div>
             </section>
         </div>

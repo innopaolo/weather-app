@@ -8,7 +8,7 @@ export function getAPIurl(apiKey, location) {
 const errorMessage = document.querySelector('.error-message');
 export function errorDisplay() {
     errorMessage.textContent = "Found no match!";
-    
+
     setTimeout(() => {
         errorMessage.textContent = "";
     }, 3000);
@@ -34,3 +34,14 @@ export async function fetchAndFillWeatherInfo(url, getWeather, fillDOM, errorDis
 }
 
 
+// Convert celsius to fahrenheit
+export function convertCelsiustoFahrenheit(celsius) {
+    const fahrenheit = ((celsius * 9/5) + 32).toFixed(1);
+    return fahrenheit.endsWith('.0') ? fahrenheit.split('.')[0] : fahrenheit;
+}
+
+// Convert fahrenheit to celsius
+export function convertFahrenheitToCelsius(fahrenheit) {
+    const celsius = (((fahrenheit - 32) * 5/9)).toFixed(1);
+    return celsius.endsWith('.0') ? celsius.split('.')[0] : celsius;
+}

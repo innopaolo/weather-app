@@ -12,7 +12,7 @@ body {
     background-image: url('./assets/weatherBG.jpg');
     background-size: cover;
     background-repeat: no-repeat;
-    height: 100vh;
+    height: 130vh;
     font-family: 'Mukta', sans-serif;
     display: flex;
     flex-direction: column;
@@ -112,11 +112,12 @@ main {
 }
 
 .location {
-    line-height: 2rem;
+    line-height: 2.4rem;
 }
 
 .weather-details {
     display: flex;
+    justify-content: space-evenly;
 }
 
 .degrees {
@@ -131,13 +132,13 @@ main {
     vertical-align: super;
     margin-top: 1em;
     color: antiquewhite;
+    margin-right: 10px;
 }
 
 .extra-info {
     align-self: center;
-    margin: 0 0 0 auto;
     border-left: 3px solid #9b9b9b;
-    padding-left: 1.2em;
+    padding-left: 0.5em;
 }
 
 .feels-like::after {
@@ -166,6 +167,7 @@ main {
 
     .location {
         line-height: 2.8rem;
+        width: 120%;
     }
 
     .degrees {
@@ -181,3 +183,79 @@ main {
         margin-top: 2rem;
     }
 }
+
+.error-message {
+    color: rgb(235, 81, 81);
+}
+
+/* Toggle switch for fahrenheit/celisus */
+.switch {
+    position: absolute;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    top: 1rem;
+    right: 1rem;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "℉";
+    text-align: center;
+    color: #b7b1b1;
+    font-size: 18px;
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    transform: translateX(26px);
+    color: black;
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+
+.weather-values {
+    color: antiquewhite;
+}
+  
