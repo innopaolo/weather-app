@@ -33,15 +33,8 @@ window.addEventListener('keydown', (e) => {
         utils.fetchAndFillWeatherInfo(
             userAPIurl, 
             fetchAPI.getWeather, 
-            DOM.fillElements, 
-            utils.errorDisplay
+            DOM.fillElements,
             );
-        
-        // Simulates long loading times for fetch
-        setTimeout(() => {
-            DOM.loadingElement.style.display = "none";
-            DOM.main.style.display = "block";
-        }, 1000);
     }
 });
 
