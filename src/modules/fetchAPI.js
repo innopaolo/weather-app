@@ -10,7 +10,7 @@ export function getWeather(url) {
 }
 
 export function getUserLocation() {
-    return fetch('http://ip-api.com/json/')
+    return fetch('https://ip-api.com/json/')
         .then(response => response.json())
         .then(data => {
             return data.city;
