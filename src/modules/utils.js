@@ -1,3 +1,5 @@
+import { main, loadingElement } from './manipulateDOM.js';
+
 // URL for getting JSON data
 export function getAPIurl(apiKey, location) {
     const apiUrl = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${location}`;
@@ -6,7 +8,7 @@ export function getAPIurl(apiKey, location) {
 
 // Displays error message
 const errorMessage = document.querySelector('.error-message');
-export function errorDisplay() {
+function errorDisplay() {
     errorMessage.textContent = "Found no match!";
 
     setTimeout(() => {
@@ -15,7 +17,7 @@ export function errorDisplay() {
 }
 
 // Get weather data and fill in elements
-export async function fetchAndFillWeatherInfo(url, getWeather, fillElements, errorDisplay) {
+export async function fetchAndFillWeatherInfo(url, getWeather, fillElements) {
     try {
         const data = await getWeather(url);
         const locationText = `${data.location.name}, ${data.location.country}`;
@@ -28,8 +30,15 @@ export async function fetchAndFillWeatherInfo(url, getWeather, fillElements, err
             data.current.wind_mph,
             data.current.humidity
         );
+
+        setTimeout(() => {
+            loadingElement.style.display = "none";
+            main.style.display = "block";
+        }, 1000);
     } catch (error) {
         errorDisplay();
+        main.style.display = "none";
+        loadingElement.style.display = "none";
     }
 }
 
