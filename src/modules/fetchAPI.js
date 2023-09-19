@@ -10,10 +10,11 @@ export function getWeather(url) {
 }
 
 export function getUserLocation() {
-    return fetch('https://ip-api.com/json/')
+    return fetch('https://api.ipgeolocation.io/ipgeo?apiKey=f8b4bad8fee94cac9f4923fbd651e65f')
         .then(response => response.json())
         .then(data => {
-            return data.city;
+            console.log(data.city, data.country_name);
+            return data.city + " " + data.country_name;
         })
         .catch(error => {
             console.error('Error fetching location: ', error);
