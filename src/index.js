@@ -14,6 +14,10 @@ const apiKey = 'ce8d565b4f7746cb970133312231609';
 const apiUrl = utils.getAPIurl(apiKey, currentLocation);
 
 
+// // Show loading component for 3 seconds before showing weather data - just for fun!
+// windows.
+
+
 // Get weather data and fill in elements
 utils.fetchAndFillWeatherInfo(apiUrl, fetchAPI.getWeather, DOM.fillElements);
 
@@ -21,8 +25,23 @@ utils.fetchAndFillWeatherInfo(apiUrl, fetchAPI.getWeather, DOM.fillElements);
 // Reload info box when user inputs a new city
 window.addEventListener('keydown', (e) => {
     if (e.key === 'Enter') {
+        // Show loading div 
+        DOM.loadingElement.style.display = "block";
+        DOM.main.style.display = "none";
+
         const userAPIurl = utils.getAPIurl(apiKey, DOM.userInput);
-        utils.fetchAndFillWeatherInfo(userAPIurl, fetchAPI.getWeather, DOM.fillElements, utils.errorDisplay);
+        utils.fetchAndFillWeatherInfo(
+            userAPIurl, 
+            fetchAPI.getWeather, 
+            DOM.fillElements, 
+            utils.errorDisplay
+            );
+        
+        // Simulates long loading times for fetch
+        setTimeout(() => {
+            DOM.loadingElement.style.display = "none";
+            DOM.main.style.display = "block";
+        }, 1000);
     }
 });
 

@@ -15,12 +15,12 @@ export function errorDisplay() {
 }
 
 // Get weather data and fill in elements
-export async function fetchAndFillWeatherInfo(url, getWeather, fillDOM, errorDisplay) {
+export async function fetchAndFillWeatherInfo(url, getWeather, fillElements, errorDisplay) {
     try {
         const data = await getWeather(url);
         const locationText = `${data.location.name}, ${data.location.country}`;
         
-        fillDOM(
+        fillElements(
             data.current.condition.text,
             locationText,
             data.current.temp_c,

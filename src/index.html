@@ -6,19 +6,24 @@
     <title>Weather app</title>
 </head>
 <body>
+      <!-- Fahrenheit switch -->
+      <label class="switch">
+        <input id="convert" type="checkbox">
+        <span class="slider round"></span>
+    </label>
+
     <div class="search-group field">
         <input type="input" class="search-field" placeholder='city' id='city' autocomplete="off" />
         <label for="city" class="search-label">City</label>
         <div class="error-message"></div>
     </div>
 
-    <main>
-        <!-- Rounded switch -->
-        <label class="switch">
-            <input id="convert" type="checkbox">
-            <span class="slider round"></span>
-        </label>
+       <!-- CSS loader -->
+    <div id="loading" class="loading">
+        <div class="loader"></div>
+    </div>
 
+    <main>
         <div class="info">
             <p class="condition"></p>
             <h1 class="location"></h1>

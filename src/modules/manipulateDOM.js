@@ -5,6 +5,10 @@ const feelsLike = document.querySelector(".feels-like");
 const windMPH = document.querySelector(".wind-mph");
 const humidity = document.querySelector(".humidity");
 
+// Loading circle div
+export const main = document.querySelector("main");
+export const loadingElement = document.getElementById('loading');
+
 
 export function fillElements(text1, text2, text3, text4, text5, text6) {
     condition.textContent = text1;
@@ -13,6 +17,12 @@ export function fillElements(text1, text2, text3, text4, text5, text6) {
     feelsLike.innerHTML = `FEELS LIKE: <span style="color:antiquewhite;">${text4}</span>`;
     windMPH.innerHTML = `WIND: <span style="color:antiquewhite;">${text5} m/h</span>`;
     humidity.innerHTML = `HUMIDITY: <span style="color:antiquewhite;">${text6}%</span>`;
+
+    // Simulates long loading times for fetch
+    setTimeout(() => {
+        loadingElement.style.display = "none";
+        main.style.display = "block";
+    }, 3000);
 }
 
 
