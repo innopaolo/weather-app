@@ -20,8 +20,16 @@ function errorDisplay() {
 export async function fetchAndFillWeatherInfo(url, getWeather, fillElements) {
     try {
         const data = await getWeather(url);
-        const locationText = `${data.location.name}, ${data.location.country}`;
-        
+        let country = data.location.country;
+
+        // Shorten country names
+        if (country.includes("United States")) {
+            country = "USA"; 
+        } else if (country.includes("United Kingdom")) {
+            country = "UK";
+        }
+
+        const locationText = `${data.location.name}, ${country}`;
         fillElements(
             data.current.condition.text,
             locationText,
