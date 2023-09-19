@@ -17,12 +17,6 @@ export function fillElements(text1, text2, text3, text4, text5, text6) {
     feelsLike.innerHTML = `FEELS LIKE: <span style="color:antiquewhite;">${text4}</span>`;
     windMPH.innerHTML = `WIND: <span style="color:antiquewhite;">${text5} m/h</span>`;
     humidity.innerHTML = `HUMIDITY: <span style="color:antiquewhite;">${text6}%</span>`;
-
-    // Simulates long loading times for fetch
-    setTimeout(() => {
-        loadingElement.style.display = "none";
-        main.style.display = "block";
-    }, 3000);
 }
 
 
