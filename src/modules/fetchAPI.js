@@ -10,7 +10,7 @@ export function getWeather(url) {
 }
 
 export function getUserLocation() {
-    return fetch('http://www.geoplugin.net/json.gp')
+    return fetch('https://www.geoplugin.net/json.gp')
         .then(response => response.json())
         .then(data => {
         return data.geoplugin_city;
