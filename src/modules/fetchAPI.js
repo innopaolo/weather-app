@@ -14,6 +14,8 @@ export function getUserLocation() {
         .then(response => response.json())
         .then(data => {
             console.log(data.city, data.country_name);
+
+            // Country data included in case of similar city names
             return data.city + " " + data.country_name;
         })
         .catch(error => {
