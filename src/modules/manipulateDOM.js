@@ -34,7 +34,7 @@ input.addEventListener('keydown', (e) => {
 
 
 // Event listener for fahrenheit/celsius button
-let fahrenheitFlag = false;
+export let fahrenheitFlag = false;
 
 export function addConvertButtonEventListener(celsToFa, faToCels) {
     const convertBtn = document.getElementById('convert');
