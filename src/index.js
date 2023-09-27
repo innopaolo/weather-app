@@ -14,10 +14,6 @@ const apiKey = 'ce8d565b4f7746cb970133312231609';
 const apiUrl = utils.getAPIurl(apiKey, currentLocation);
 
 
-// // Show loading component for 3 seconds before showing weather data - just for fun!
-// windows.
-
-
 // Get weather data and fill in elements
 utils.fetchAndFillWeatherInfo(apiUrl, fetchAPI.getWeather, DOM.fillElements);
 
@@ -33,7 +29,7 @@ window.addEventListener('keydown', (e) => {
         utils.fetchAndFillWeatherInfo(
             userAPIurl, 
             fetchAPI.getWeather, 
-            DOM.fillElements,
+            DOM.fillElements
             );
     }
 });
