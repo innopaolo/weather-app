@@ -53,12 +53,20 @@ export async function fetchAndFillWeatherInfo(url, getWeather, fillElements) {
 
 // Convert celsius to fahrenheit
 export function convertCelsiustoFahrenheit(celsius) {
-    const fahrenheit = ((celsius * 9/5) + 32).toFixed(1);
-    return fahrenheit.endsWith('.0') ? fahrenheit.split('.')[0] : fahrenheit;
+    const fahrenheit = ((celsius * 9/5) + 32);
+    return roundOff(fahrenheit);
 }
 
 // Convert fahrenheit to celsius
 export function convertFahrenheitToCelsius(fahrenheit) {
-    const celsius = (((fahrenheit - 32) * 5/9)).toFixed(1);
-    return celsius.endsWith('.0') ? celsius.split('.')[0] : celsius;
+    const celsius = (((fahrenheit - 32) * 5/9));
+    return roundOff(celsius);
+}
+
+// Any decimal portion less than 0.5 will not 
+// affect the integer part when using Math.floor, 
+// and any decimal portion equal to or greater 
+// than 0.5 will push the integer part up by 1
+export function roundOff(number) {
+    return Math.floor(number + 0.5);
 }
