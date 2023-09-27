@@ -11,10 +11,18 @@ export const loadingElement = document.getElementById('loading');
 
 
 export function fillElements(text1, text2, text3, text4, text5, text6) {
+    // Any decimal portion less than 0.5 will not 
+    // affect the integer part when using Math.floor, 
+    // and any decimal portion equal to or greater 
+    // than 0.5 will push the integer part up by 1.
+    function roundOff(number) {
+        return Math.floor(number + 0.5);
+      }
+
     condition.textContent = text1;
     location.textContent = text2;
-    degrees.textContent = text3;
-    feelsLike.innerHTML = `FEELS LIKE: <span style="color:antiquewhite;">${text4}</span>`;
+    degrees.textContent = roundOff(text3);
+    feelsLike.innerHTML = `FEELS LIKE: <span style="color:antiquewhite;">${roundOff(text4)}</span>`;
     windMPH.innerHTML = `WIND: <span style="color:antiquewhite;">${text5} m/h</span>`;
     humidity.innerHTML = `HUMIDITY: <span style="color:antiquewhite;">${text6}%</span>`;
 }
