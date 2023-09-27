@@ -294,4 +294,17 @@ input:checked + .slider:before {
     50%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,100% 100%,100% 100%)}
     75%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 100%)}
     100% {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 0)}
-}  
+}
+
+.fahrenheit::after {
+    content: '℉';
+    font-size: 0.3em;
+    vertical-align: super;
+    margin-top: 1em;
+    color: antiquewhite;
+    margin-right: 10px;
+}
+
+.feels-like.fahrenheit::after {
+    font-size: 0.5em;
+}

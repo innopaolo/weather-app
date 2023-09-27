@@ -48,9 +48,13 @@ export function addConvertButtonEventListener(celsToFa, faToCels) {
         if (fahrenheitFlag) {
             degrees.textContent = celsToFa(degreesVal);
             feelsLike.innerHTML = `FEELS LIKE: <span style="color:antiquewhite;">${celsToFa(feelsLikeVal)}</span>`;
+            degrees.classList.add("fahrenheit");
+            feelsLike.classList.add("fahrenheit");
         } else {
             degrees.textContent = faToCels(degreesVal);
             feelsLike.innerHTML = `FEELS LIKE: <span style="color:antiquewhite;">${faToCels(feelsLikeVal)}</span>`;
+            degrees.classList.remove("fahrenheit");
+            feelsLike.classList.remove("fahrenheit");
         }
         
     });
