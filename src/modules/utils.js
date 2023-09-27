@@ -32,7 +32,6 @@ export async function fetchAndFillWeatherInfo(url, getWeather, fillElements) {
         // Ensures info box presents correct temperature scale
         let currentTemp;
         let currentFeelsLike;
-        console.log(fahrenheitFlag);
         if (fahrenheitFlag) {
             currentTemp = data.current.temp_f;
             currentFeelsLike = data.current.feelslike_f;
@@ -53,6 +52,7 @@ export async function fetchAndFillWeatherInfo(url, getWeather, fillElements) {
 
         setTimeout(() => {
             loadingElement.style.display = "none";
+            main.classList.add("fade-in");
             main.style.display = "block";
         }, 1000);
     } catch (error) {

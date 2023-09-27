@@ -23,6 +23,7 @@ window.addEventListener('keydown', (e) => {
     if (e.key === 'Enter') {
         // Show loading div 
         DOM.loadingElement.style.display = "block";
+        DOM.main.classList.remove("fade-in");
         DOM.main.style.display = "none";
 
         const userAPIurl = utils.getAPIurl(apiKey, DOM.userInput);
