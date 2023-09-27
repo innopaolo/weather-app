@@ -1,4 +1,4 @@
-import { main, loadingElement } from './manipulateDOM.js';
+import { main, loadingElement, fahrenheitFlag } from './manipulateDOM.js';
 
 // URL for getting JSON data
 export function getAPIurl(apiKey, location) {
@@ -29,12 +29,24 @@ export async function fetchAndFillWeatherInfo(url, getWeather, fillElements) {
             country = "UK";
         }
 
+        // Ensures info box presents correct temperature scale
+        let currentTemp;
+        let currentFeelsLike;
+        console.log(fahrenheitFlag);
+        if (fahrenheitFlag) {
+            currentTemp = data.current.temp_f;
+            currentFeelsLike = data.current.feelslike_f;
+        } else {
+            currentTemp = data.current.temp_c;
+            currentFeelsLike = data.current.feelslike_c;
+        }
+
         const locationText = `${data.location.name}, ${country}`;
         fillElements(
             data.current.condition.text,
             locationText,
-            data.current.temp_c,
-            data.current.feelslike_c,
+            currentTemp,
+            currentFeelsLike,
             data.current.wind_mph,
             data.current.humidity
         );
