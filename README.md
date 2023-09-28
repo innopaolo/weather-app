@@ -42,6 +42,7 @@ Check out the live demo [here!](https://innopaolo.github.io/weather-app/)
 - Background image: [Unsplash](https://unsplash.com/)
 - Weather data: [WeatherAPI](https://www.weatherapi.com/)
 - Fonts: [Google Fonts](https://fonts.google.com/)
+- Geo location: [IPGeolocation](https://ipgeolocation.io/)
 
 
 I hope the weather is great wherever you are 🤝.
